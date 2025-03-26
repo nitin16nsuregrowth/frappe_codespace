@@ -11,10 +11,10 @@ fi
 rm -rf /workspaces/frappe_codespace/.git
 
 source /home/frappe/.nvm/nvm.sh
-nvm alias default 18
-nvm use 18
+nvm alias default 20
+nvm use 20
 
-echo "nvm use 18" >> ~/.bashrc
+echo "nvm use 20" >> ~/.bashrc
 cd /workspace
 
 bench init \
@@ -37,6 +37,7 @@ sed -i '/redis/d' ./Procfile
 bench new-site dev.localhost \
 --mariadb-root-password 123 \
 --admin-password admin \
+--db-root-username root \
 --no-mariadb-socket
 
 bench --site dev.localhost set-config developer_mode 1
